@@ -9,23 +9,20 @@ jobs:
   print_hello:
     docker:
       - image: circleci/node:13.8.0
-    steps: 
+    steps:
       - run:
           name: printing hello
           command: |
             echo "print hello"
 
-
   print_world:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: 
+      - run:
           name: printing world
           command: |
             echo "print world"
-
-
 
 # Orchestrate or schedule a set of jobs
 workflows:
@@ -38,4 +35,3 @@ workflows:
       - print_world
           requires:
             - print_hello
-           
