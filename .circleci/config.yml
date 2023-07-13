@@ -10,7 +10,7 @@ commands:
         type: string
 
     steps:
-      - run: echo << parameters.to >>
+      - run: echo << parameters.id >>
 
 orbs:
   # Declare a dependency on the welcome-orb
