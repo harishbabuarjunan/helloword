@@ -32,8 +32,8 @@ jobs:
     steps:
       - persist_to_workspace:
           root: /tmp/workspace
-              paths:
-                - helloword/output
+          paths:
+            - helloword/output
       - run:  "text to output here" > output.txt
 
   print_output_file:
