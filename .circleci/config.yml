@@ -6,9 +6,9 @@ commands:
   print_pipeline_id:
     description: "command to print pipeline id"
     parameters:
-      to:
+      id:
         type: string
-        default: "Hello World"
+
     steps:
       - run: echo << parameters.to >>
 
@@ -18,13 +18,11 @@ orbs:
 
 jobs:
   print_pipeline:
-    environment:
-      CIRCLE_WORKFLOW_ID: latest
     docker:
       - image: circleci/node:13.8.0
     steps:
       - print_pipeline_id:
-          to: ${CIRCLE_WORKFLOW_ID}
+          to: << pipeline.id >>
 
   print_hello:
     docker:
